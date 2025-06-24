@@ -177,16 +177,73 @@ using namespace std;
 
 int main()
 {
-	string line = "hellow hellow world and it";
-	string line1 = "qwe";
-	string result = line + line1;
-	result += line;
-	cout << line.length() << endl;
-	cout << line.size() << endl; // to same
-	cout << line.find("e") << endl;
-	line.erase(0,6); // vudalenia dekilokoh symboliv
-	cout << line << endl;
-	line.insert(0, "HW"); // vkladenia
-	cout << line << endl;
-	line.clear();
+	//string line = "hellow hellow world and it";
+	//string line1 = "qwe";
+	//string result = line + line1;
+	//result += line;
+	//cout << line.length() << endl;
+	//cout << line.size() << endl; // to same
+	//cout << line.find("e") << endl;
+	//line.erase(0,6); // vudalenia dekilokoh symboliv
+	//cout << line << endl;
+	//line.insert(0, "HW"); // vkladenia
+	//cout << line << endl;
+	//line.clear();
+
+	cout << "Enter name" << endl;
+	string name;
+	cin >> name;
+	cout << name.length() << endl;
+	cout << name[0] << endl;
+	cout << name[name.length() - 1] << endl;
+
+	if (name[0] == 'À' || name[0] == 'à') {
+		cout << "YEs" << endl;
+	}
+	else {
+		cout << "No" << endl;
+	}
+
+
+	string text;
+	cout << "Enter riadok" << endl;
+	cin >> text;
+
+	int spaces = 0;
+	for (int i = 0; i < text.length(); i++) {
+		if (text[i] == ' ') {
+			spaces++;
+		}
+	}
+	cout << spaces << endl;
+
+	for (int i = 0; i < text.length(); i++) {
+		if (text[i] == ' ') {
+			text[i] == '_';
+		}
+	}
+	cout << text;
+	
+
+
+
+	string text1;
+	cout << "Enter riadok" << endl;
+	cin >> text1;
+	bool isPalindrome = true;
+	
+	for (int i = 0; i < text.length() / 2; i++)
+	{
+		if (text[i] != text[text.length() - 1 - i]) {
+			isPalindrome = false;
+			break;
+		}
+	}
+
+	if (isPalindrome) {
+		cout << "its palindrome" << endl;
+	}
+	else {
+		cout << "its no palindrome" << endl;
+	}
 }
